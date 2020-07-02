@@ -2,7 +2,7 @@
 
 ---
 
-### Category Name 1 
+### Data Viz 
 
 [Project 1 Title](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
@@ -17,19 +17,19 @@
 
 ---
 
-### Category Name 2
+### Selected Publications
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
-
----
-
-
-
+- [Disruption of DNA-methylation-dependent long gene repression in Rett syndrome](https://www.nature.com/articles/nature14319)
+- [With Morality, The Heart Calls The Shots](https://thehoya.com/gilbert-with-morality-the-heart-calls-the-shots/)
+- [Flocking To The Herd](https://thehoya.com/gilbert-flocking-to-the-herd/)
+- [Who We Are Not What We Are](https://thehoya.com/gilbert-who-we-are-not-what-we-are/)
+- [Grasping The Power Of Pain](https://thehoya.com/gilbert-grasping-the-power-of-pain/)
 
 ---
-<p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
+
+
+
+
+---
+<p style="font-size:11px">
 <!-- Remove above link if you don't want to attibute -->
