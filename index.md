@@ -4,12 +4,12 @@
 
 ### Data Viz 
 
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Endangered/Extinct Species Across Orders of Mammals ](/sample_page)
+<img src="images/redlist_hierarchy_plot.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[#WinTheEra Tweet Locations across the US](/pdf/sample_presentation.pdf)
+<img src="images/wintheeratweetsbyhournew.gif?raw=true"/>
 
 ---
 [Project 3 Title](http://example.com/)
