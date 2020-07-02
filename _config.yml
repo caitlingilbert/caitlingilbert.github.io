@@ -1,11 +1,12 @@
 title: Caitlin Gilbert # your name (or website title) here
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
+logo: "/images/CODCHw0A_400x400.jpg" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
+  Neuroscience PhD Candidate, Rockefeller University
   <br><br>
-  Second description 
+  Data Science/Visualization 
   <br><br>
-  <a href="https://www.linkedin.com/in/caitlingilbert/">View My LinkedIn Profile</a> 
+  <a href="https://www.linkedin.com/in/caitlin-gilbert/">LinkedIn</a>
+  <a href="https://www.github.com/caitlingilbert/">Github</a> 
   
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
