@@ -4,7 +4,7 @@
 
 ### Data Viz 
 
-[Endangered/Extinct Species Across Orders of Mammals ](/sample_page)
+[Endangered/Extinct Species Across Mammalian Orders](/sample_page)
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
 
 ---
