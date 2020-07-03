@@ -13,8 +13,8 @@
 <img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 
 ---
-### [Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+### [Racial Dot Plot of Queens, NY](/petetweets)
+<img src="images/queens_race_dotplot.png?raw=true"/>
 
 ---
 
