@@ -4,16 +4,16 @@
 
 ### Data Viz 
 
-[Endangered/Extinct Species Across Mammalian Orders](/petetweets)
+# [Endangered/Extinct Species Across Mammalian Orders](/petetweets)
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
 
 ---
-[#WinTheEra Tweet Locations across the US](/pdf/sample_presentation.pdf)
+# [#WinTheEra Tweet Locations across the US](/petetweets)
 
 <img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+# [Project 3 Title](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
