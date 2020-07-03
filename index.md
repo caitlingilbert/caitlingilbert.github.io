@@ -19,7 +19,7 @@
 ---
 ### [Racial Dot Plot of Queens, NY](/petetweets)
 <p align="center">
-<img width="669" height="498" src="images/queens_race_dotplot.png?raw=true"/>
+<img src="images/queens_race_dotplot.png?raw=true"/>
 </p>
 
 ---
