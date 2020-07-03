@@ -28,7 +28,7 @@
 
 ---
 
-### [Resume](/resume_CaitlinGilbert.pdf)
+### [Resume](/resume_CaitlinGilbert.pdf) | Contact: caitlinsgilbert@gmail.com
 
 
 
