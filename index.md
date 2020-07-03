@@ -9,6 +9,7 @@
 
 ---
 [#WinTheEra Tweet Locations across the US](/pdf/sample_presentation.pdf)
+
 <img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 
 ---
