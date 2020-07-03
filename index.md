@@ -5,16 +5,22 @@
 # Data Viz 
 
 ### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy)
-<img align="center" src="images/redlist_hierarchy_plot.png?raw=true"/>
+<p align="center">
+<img src="images/redlist_hierarchy_plot.png?raw=true"/>
+</p>
 
 ---
 ### [#WinTheEra Tweet Locations across the US](/petetweets)
 
-<img align="center" src="images/wintheeratweetsbyhour.gif?raw=true"/>
+<p align="center">
+<img src="images/wintheeratweetsbyhour.gif?raw=true"/>
+</p>
 
 ---
 ### [Racial Dot Plot of Queens, NY](/petetweets)
-<img align="center" src="images/queens_race_dotplot.png?raw=true"/>
+<p align="center">
+<img src="images/queens_race_dotplot.png?raw=true"/>
+</p>
 
 ---
 
