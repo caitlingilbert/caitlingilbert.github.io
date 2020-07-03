@@ -17,7 +17,7 @@
 </p>
 
 ---
-### [Racial Dot Plot of Queens, NY](/petetweets)
+### [Racial Dot Plot of Queens, NY](/queensrace)
 <p align="center">
 <img src="images/queens_race_dotplot.png?raw=true"/>
 </p>
