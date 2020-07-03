@@ -4,7 +4,7 @@
 
 ### Data Viz 
 
-[Endangered/Extinct Species Across Mammalian Orders](/sample_page)
+[Endangered/Extinct Species Across Mammalian Orders](/petetweets)
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
 
 ---
@@ -28,7 +28,7 @@
 
 ---
 
-### [Resume](/pdf/
+### [Resume](/resume_CaitlinGilbert.pdf)
 
 
 
