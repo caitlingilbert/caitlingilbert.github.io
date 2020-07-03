@@ -1,20 +1,20 @@
-# Portfolio
+## Portfolio
 
 ---
 
 # Data Viz 
 
 ### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy)
-<img src="images/redlist_hierarchy_plot.png?raw=true"/>
+<img align="center" src="images/redlist_hierarchy_plot.png?raw=true"/>
 
 ---
 ### [#WinTheEra Tweet Locations across the US](/petetweets)
 
-<img src="images/wintheeratweetsbyhour.gif?raw=true"/>
+<img align="center" src="images/wintheeratweetsbyhour.gif?raw=true"/>
 
 ---
 ### [Racial Dot Plot of Queens, NY](/petetweets)
-<img src="images/queens_race_dotplot.png?raw=true"/>
+<img align="center" src="images/queens_race_dotplot.png?raw=true"/>
 
 ---
 
