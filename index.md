@@ -2,23 +2,23 @@
 
 ---
 
-### Data Viz 
+# Data Viz 
 
-# [Endangered/Extinct Species Across Mammalian Orders](/petetweets)
+### [Endangered/Extinct Species Across Mammalian Orders](/petetweets)
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
 
 ---
-# [#WinTheEra Tweet Locations across the US](/petetweets)
+### [#WinTheEra Tweet Locations across the US](/petetweets)
 
 <img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 
 ---
-# [Project 3 Title](http://example.com/)
+### [Project 3 Title](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
-### Selected Publications
+# Selected Publications
 
 - [Disruption of DNA-methylation-dependent long gene repression in Rett syndrome](https://www.nature.com/articles/nature14319)
 - [With Morality, The Heart Calls The Shots](https://thehoya.com/gilbert-with-morality-the-heart-calls-the-shots/)
