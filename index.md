@@ -33,6 +33,13 @@
 
 ---
 
+# Science + Data Viz Outreach and Talks
+
+- [Data Visualization and Covid-19: Challenges and Best Practices](https://rockedu.rockefeller.edu/component/datavizcovid/)
+- [How to Code an Interactive Map of Covid-19 Cases in NYC](https://rockedu.rockefeller.edu/component/covid19datavizrshiny/)
+
+---
+
 # Selected Publications
 
 - [Disruption of DNA-methylation-dependent long gene repression in Rett syndrome](https://www.nature.com/articles/nature14319)
