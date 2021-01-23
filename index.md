@@ -4,6 +4,13 @@
 
 # Data Viz 
 
+### [Georgia Runoff Election Turnout Demography](/garunoff.md)
+<p align="center">
+<img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true"/>
+</p>
+
+---
+
 ### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy.md)
 <p align="center">
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
