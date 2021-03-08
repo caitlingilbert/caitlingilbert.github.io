@@ -8,3 +8,4 @@
 **[Hospitalization data source](https://github.com/nychealth/coronavirus-data)**
 
 
+<img src="images/nyc_covid_vax_zcta_3-3-21.png?raw=true"/>
