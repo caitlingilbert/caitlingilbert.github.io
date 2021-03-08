@@ -4,6 +4,13 @@
 
 # Data Viz 
 
+### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
+<p align="center">
+<img src="images/nyc_covid_vax_zcta_3-3-21.png?raw=true"/>
+</p>
+
+---
+
 ### [Georgia Runoff Election Turnout Demography](/garunoff.md)
 <p align="center">
 <img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true"/>
