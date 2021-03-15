@@ -54,6 +54,7 @@
 - [Flocking To The Herd](https://thehoya.com/gilbert-flocking-to-the-herd/)
 - [Who We Are Not What We Are](https://thehoya.com/gilbert-who-we-are-not-what-we-are/)
 - [Grasping The Power Of Pain](https://thehoya.com/gilbert-grasping-the-power-of-pain/)
+- [On The Cutting Edge: Inside The Lombardi Cancer Center](https://thehoya.com/on-the-cutting-edge-inside-the-lombardi-cancer-center/)
 
 ---
 
