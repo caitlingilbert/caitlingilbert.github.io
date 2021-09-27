@@ -1,5 +1,3 @@
-## Portfolio
-
 ---
 
 # Data Viz 
