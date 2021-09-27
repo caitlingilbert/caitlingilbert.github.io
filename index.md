@@ -1,8 +1,6 @@
 ## Portfolio
 ---
 
-# Data Viz 
-
 ### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
 <p align="center">
 <img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true"/>
