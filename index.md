@@ -1,33 +1,32 @@
 ## Portfolio
----
 
 ### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
 <p align="center">
 <img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true"/>
 </p>
 
----
+
 
 ### [Georgia Runoff Election Turnout Demography](/garunoff.md)
 <p align="center">
 <img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true"/>
 </p>
 
----
+
 
 ### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy.md)
 <p align="center">
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
 </p>
 
----
+
 
 ### [Racial Dot Plot of Queens, NY](/queensrace.md)
 <p align="center">
 <img src="images/queens_race_dotplot.png?raw=true"/>
 </p>
 
----
+
 
 ### [#WinTheEra Tweet Locations Over a Day](/petetweets.md)
 
@@ -37,14 +36,14 @@
 
 ---
 
-# Science + Data Viz Outreach and Talks
+## Science + Data Viz Outreach and Talks
 
 - [Data Visualization and Covid-19: Challenges and Best Practices](https://rockedu.rockefeller.edu/component/datavizcovid/)
 - [How to Code an Interactive Map of Covid-19 Cases in NYC](https://rockedu.rockefeller.edu/component/covid19datavizrshiny/)
 
 ---
 
-# Selected Publications
+## Selected Publications
 
 - [Disruption of DNA-methylation-dependent long gene repression in Rett syndrome](https://www.nature.com/articles/nature14319)
 - [With Morality, The Heart Calls The Shots](https://thehoya.com/gilbert-with-morality-the-heart-calls-the-shots/)
