@@ -1,5 +1,15 @@
 ## Portfolio
 
+### [Torrential Rains in NYC](https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/)
+<p align="center">
+<img src="images/ida_cp_rainfall.png?raw=true"/>
+</p>
+
+### [Hurricane Ida Hits The Gulf Coast](https://graphics.reuters.com/STORM-IDA/LANDFALL/lgvdwwgjwpo/)
+<p align="center">
+<img src="images/ida_leveed_gulfmap.png?raw=true"/>
+</p>
+
 ### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
 <p align="center">
 <img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true"/>
