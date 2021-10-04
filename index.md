@@ -1,5 +1,4 @@
 ## Portfolio
-<div align="center">
 
 ### [Torrential Rains in NYC](https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/)
 <p align="center">
@@ -31,13 +30,12 @@
 <img src="images/queens_race_dotplot.png?raw=true"/>
 </p>
 
-### [#WinTheEra Tweet Locations Over a Day](/petetweets.md)
 
+### [#WinTheEra Tweet Locations Over a Day](/petetweets.md)
 <p align="center">
 <img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 </p>
 
-</div>
 ---
 
 ## Science + Data Viz Outreach and Talks
