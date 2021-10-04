@@ -1,3 +1,4 @@
+<div align="center">
 ## Portfolio
 
 ### [Torrential Rains in NYC](https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/)
@@ -15,28 +16,20 @@
 <img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true"/>
 </p>
 
-
-
 ### [Georgia Runoff Election Turnout Demography](/garunoff.md)
 <p align="center">
 <img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true"/>
 </p>
-
-
 
 ### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy.md)
 <p align="center">
 <img src="images/redlist_hierarchy_plot.png?raw=true"/>
 </p>
 
-
-
 ### [Racial Dot Plot of Queens, NY](/queensrace.md)
 <p align="center">
 <img src="images/queens_race_dotplot.png?raw=true"/>
 </p>
-
-
 
 ### [#WinTheEra Tweet Locations Over a Day](/petetweets.md)
 
@@ -44,6 +37,7 @@
 <img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 </p>
 
+</div>
 ---
 
 ## Science + Data Viz Outreach and Talks
