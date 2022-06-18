@@ -95,7 +95,7 @@
 
 ---
 
-### [Resume](/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@ft.com
+### [Resume](/files/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@ft.com
 
 
 
