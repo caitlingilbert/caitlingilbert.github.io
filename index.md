@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://www.ft.com/content/27cf21ac-dabc-45a5-813f-0223572b908f/">
-         <img src="images/donoroverlap_crossover2.gif?raw=true">
+         <img src="images/donoroverlap_crossover_2.gif?raw=true">
          </a>
 </p>
 
