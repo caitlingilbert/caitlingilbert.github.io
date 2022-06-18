@@ -1,7 +1,7 @@
 ## Selected Portfolio
 
-### Torrential Rains in NYC
 <p align="center">
+Torrential Rains in NYC
 <a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
          <img src="images/ida_cp_rainfall.png?raw=true">
 </a>
