@@ -95,10 +95,10 @@
 
 ---
 
-### [Resume](/caitlingilbert_resume.pdf) | Contact: caitlinsgilbert@gmail.com
+### [Resume](/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@ft.com
 
 
 
 ---
 <p style="font-size:11px">
-<!-- Remove above link if you don't want to attibute -->
+
