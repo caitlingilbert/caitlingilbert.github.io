@@ -1,16 +1,36 @@
-## Selected Portfolio
+## selected graphics/reporting portfolio
 
 <p align="center">
-Torrential Rains in NYC
+<a href="https://www.ft.com/content/27cf21ac-dabc-45a5-813f-0223572b908f">
+         <img src="images/donoroverlap_crossover.gif?raw=true">
+         </a>
+</p>
+                               
+<p align="center">
+         <a href="https://www.ft.com/content/33046396-15ec-460f-9724-faf6443c80b8/">
+         <img src="images/ebike_supplychain_gif.gif?raw=true">
+         </a>
+</p>
+
+<p align="center">
+         <a href="https://www.ft.com/content/47d56d82-e02c-4a53-9d26-05e5e97300b5/">
+         <img src="images/BBB_interactive_gif.gif?raw=true">
+         </a>
+</p>
+
+<p align="center">
 <a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
          <img src="images/ida_cp_rainfall.png?raw=true">
-</a>
-  </p>
-                               
-### [Hurricane Ida Hits The Gulf Coast](https://graphics.reuters.com/STORM-IDA/LANDFALL/lgvdwwgjwpo/)
-<p align="center">
-<img src="images/ida_leveed_gulfmap.png?raw=true"/>
+         </a>
 </p>
+                               
+<p align="center">
+         <a href="https://graphics.reuters.com/STORM-IDA/LANDFALL/lgvdwwgjwpo/">
+         <img src="images/ida_leveed_gulfmap.png?raw=true">
+         </a>
+</p>
+
+## other projects
 
 ### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
 <p align="center">
@@ -30,12 +50,6 @@ Torrential Rains in NYC
 ### [Racial Dot Plot of Queens, NY](/queensrace.md)
 <p align="center">
 <img src="images/queens_race_dotplot.png?raw=true"/>
-</p>
-
-
-### [#WinTheEra Tweet Locations Over a Day](/petetweets.md)
-<p align="center">
-<img src="images/wintheeratweetsbyhour.gif?raw=true"/>
 </p>
 
 ---
