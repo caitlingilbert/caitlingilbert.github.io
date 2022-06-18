@@ -1,10 +1,12 @@
 ## Selected Portfolio
 
-### [Torrential Rains in NYC](https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/)
+### Torrential Rains in NYC
 <p align="center">
-<img src="images/ida_cp_rainfall.png?raw=true"/>
-</p>
-
+<a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
+         <img src="images/ida_cp_rainfall.png?raw=true">
+</a>
+  </p>
+                               
 ### [Hurricane Ida Hits The Gulf Coast](https://graphics.reuters.com/STORM-IDA/LANDFALL/lgvdwwgjwpo/)
 <p align="center">
 <img src="images/ida_leveed_gulfmap.png?raw=true"/>
