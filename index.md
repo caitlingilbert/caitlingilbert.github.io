@@ -105,7 +105,8 @@
 
 ### [Resume](/files/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@ft.com
 
-
+---
+### shoot me a message if you'd like to read any of the paywalled links!
 
 ---
 <p style="font-size:11px">
