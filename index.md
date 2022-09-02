@@ -90,6 +90,8 @@
 
 ## selected publications/writings
 
+- [These Senate hopefuls won Trump’s endorsement. Now they are struggling](https://www.ft.com/content/88ee0e7e-ec32-4878-9e80-b702423360d5)
+- [Economic fallout from abortion bans will hit the poor hardest](https://www.ft.com/content/83da246a-7d33-4453-9015-d1789726af2c)
 - [Where are all the workers? The US states and sectors with the tightest jobs markets](https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a)
 - [More women forced to travel to seek abortions as US states clamp down](https://www.ft.com/content/3a00b5a9-24c6-4122-bcf5-f950881baf82)
 - [Will overdose deaths force an end to the US ‘war on drugs’?](https://www.ft.com/content/18ed424a-5689-42e1-bd84-436e37b2a4ea)
