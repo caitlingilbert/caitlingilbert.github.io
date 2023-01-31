@@ -103,7 +103,7 @@
 
 ---
 
-### [Resume](/files/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@ft.com
+### [Resume](/files/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@washpost.com
 
 ---
 ### shoot me a message if you'd like to read any of the paywalled links!
