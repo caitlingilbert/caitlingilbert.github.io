@@ -1,6 +1,7 @@
 ## selected graphics/reporting portfolio
 
-### Financial Times
+<h3 style="text-align: center;">Financial Times</h3>
+
 <p align="center">
 <a href="https://ig.ft.com/arizona-election-deniers/">
          <img src="images/azelection.png?raw=true" width="500">
@@ -49,7 +50,7 @@
          </a>
 </p>
 
-### Reuters
+<h3 style="text-align: center;">Reuters</h3>
 <p align="center">
 <a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
          <img src="images/ida_cp_rainfall.png?raw=true" width="500">
