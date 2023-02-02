@@ -3,7 +3,7 @@
 ### Financial Times
 <p align="center">
 <a href="https://ig.ft.com/arizona-election-deniers/">
-         <img src="images/azelection.png?raw=true" height="100">
+         <img src="images/azelection.png?raw=true" height="1000">
          </a>
 </p>
 
