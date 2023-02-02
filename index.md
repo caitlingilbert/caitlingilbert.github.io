@@ -1,6 +1,6 @@
 ## selected graphics/reporting portfolio
 
-<h3 style="text-align: center;">Financial Times</h3>
+<h3 align="center">@ Financial Times</h3>
 
 <p align="center">
 <a href="https://ig.ft.com/arizona-election-deniers/">
@@ -50,7 +50,8 @@
          </a>
 </p>
 
-<h3 style="text-align: center;">Reuters</h3>
+---
+<h3 align="center">@ Reuters</h3>
 <p align="center">
 <a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
          <img src="images/ida_cp_rainfall.png?raw=true" width="500">
@@ -66,24 +67,24 @@
 
 ---
 
-## other projects
+<h3 align="center">other projects</h3>
 
-### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
+#### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
 <p align="center">
 <img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true" width="500">
 </p>
 
-### [Georgia Runoff Election Turnout Demography](/garunoff.md)
+#### [Georgia Runoff Election Turnout Demography](/garunoff.md)
 <p align="center">
 <img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true" width="500">
 </p>
 
-### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy.md)
+#### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy.md)
 <p align="center">
 <img src="images/redlist_hierarchy_plot.png?raw=true" width="500">
 </p>
 
-### [Racial Dot Plot of Queens, NY](/queensrace.md)
+#### [Racial Dot Plot of Queens, NY](/queensrace.md)
 <p align="center">
 <img src="images/queens_race_dotplot.png?raw=true" width="500">
 </p>
@@ -114,10 +115,10 @@
 
 ---
 
-### [Resume](caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@washpost.com
+#### [Resume](caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@washpost.com
 
 ---
-### shoot me a message if you'd like to read any of the paywalled links!
+#### shoot me a message if you'd like to read any of the paywalled links!
 
 ---
 <p style="font-size:11px">
