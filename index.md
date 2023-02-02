@@ -1,5 +1,12 @@
 ## selected graphics/reporting portfolio
 
+### Financial Times
+<p align="center">
+<a href="https://ig.ft.com/arizona-election-deniers/">
+         <img src="images/azelection.png?raw=true" height="100">
+         </a>
+</p>
+
 <p align="center">
 <a href="https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a/">
          <img src="images/scatter_gif.gif?raw=true">
@@ -42,6 +49,7 @@
          </a>
 </p>
 
+### Reuters
 <p align="center">
 <a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
          <img src="images/ida_cp_rainfall.png?raw=true">
@@ -103,7 +111,7 @@
 
 ---
 
-### [Resume](/files/caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@washpost.com
+### [Resume](caitlingilbert_resume.pdf) | Contact: caitlin.gilbert@washpost.com
 
 ---
 ### shoot me a message if you'd like to read any of the paywalled links!
