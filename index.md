@@ -9,56 +9,56 @@
 
 <p align="center">
 <a href="https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a/">
-         <img src="images/scatter_gif.gif?raw=true">
+         <img src="images/scatter_gif.gif?raw=true" width="500">
          </a>
 </p>
 
 <p align="center">
 <a href="https://www.ft.com/content/5de8f03a-82fa-41a2-928a-27606351c9b4/">
-         <img src="images/flight_routes.gif?raw=true">
+         <img src="images/flight_routes.gif?raw=true" width="500">
          </a>
 </p>
 
 <p align="center">
 <a href="https://www.ft.com/content/27cf21ac-dabc-45a5-813f-0223572b908f/">
-         <img src="images/donoroverlap_crossover_2.gif?raw=true">
+         <img src="images/donoroverlap_crossover_2.gif?raw=true" width="500">
          </a>
 </p>
 
 <p align="center">
 <a href="https://www.ft.com/content/18ed424a-5689-42e1-bd84-436e37b2a4ea/">
-         <img src="images/fentanyl_lollipopchart.png?raw=true">
+         <img src="images/fentanyl_lollipopchart.png?raw=true" width="500">
          </a>
 </p>
 
 <p align="center">
 <a href="https://www.ft.com/content/9e29ad1c-b0a5-4b7d-b569-f1f8dd0e8e04/">
-         <img src="images/covid_hospitalizations_state_geofacet.png?raw=true">
+         <img src="images/covid_hospitalizations_state_geofacet.png?raw=true" width="500">
          </a>
 </p>
 
 <p align="center">
          <a href="https://www.ft.com/content/33046396-15ec-460f-9724-faf6443c80b8/">
-         <img src="images/ebike_supplychain_gif.gif?raw=true">
+         <img src="images/ebike_supplychain_gif.gif?raw=true" width="500">
          </a>
 </p>
 
 <p align="center">
          <a href="https://www.ft.com/content/47d56d82-e02c-4a53-9d26-05e5e97300b5/">
-         <img src="images/BBB_interactive_gif.gif?raw=true">
+         <img src="images/BBB_interactive_gif.gif?raw=true" width="500">
          </a>
 </p>
 
 ### Reuters
 <p align="center">
 <a href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/">
-         <img src="images/ida_cp_rainfall.png?raw=true">
+         <img src="images/ida_cp_rainfall.png?raw=true" width="500">
          </a>
 </p>
                                
 <p align="center">
          <a href="https://graphics.reuters.com/STORM-IDA/LANDFALL/lgvdwwgjwpo/">
-         <img src="images/ida_leveed_gulfmap.png?raw=true">
+         <img src="images/ida_leveed_gulfmap.png?raw=true" width="500">
          </a>
 </p>
 
@@ -69,22 +69,22 @@
 
 ### [Covid-19 Vaccination and Hospitalization Rates Across NYC](/nyccovidvax.md)
 <p align="center">
-<img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true"/>
+<img src="images/nyc_covid_vax_zcta_3-3-21_new.png?raw=true" width="500">
 </p>
 
 ### [Georgia Runoff Election Turnout Demography](/garunoff.md)
 <p align="center">
-<img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true"/>
+<img src="images/ga_runoff_dropoff_race_1.2.21.gif?raw=true" width="500">
 </p>
 
 ### [Endangered/Extinct Species Across Mammalian Orders](/redlisthierarchy.md)
 <p align="center">
-<img src="images/redlist_hierarchy_plot.png?raw=true"/>
+<img src="images/redlist_hierarchy_plot.png?raw=true" width="500">
 </p>
 
 ### [Racial Dot Plot of Queens, NY](/queensrace.md)
 <p align="center">
-<img src="images/queens_race_dotplot.png?raw=true"/>
+<img src="images/queens_race_dotplot.png?raw=true" width="500">
 </p>
 
 ---
@@ -98,6 +98,8 @@
 
 ## selected publications/writings
 
+- [How Arizona became ground zero for election deniers](https://ig.ft.com/arizona-election-deniers/)
+- [Megadonors tighten grip on Republican fundraising](https://www.ft.com/content/87c5687f-d564-4e8e-a1e7-5828a77cfeaa)
 - [These Senate hopefuls won Trump’s endorsement. Now they are struggling](https://www.ft.com/content/88ee0e7e-ec32-4878-9e80-b702423360d5)
 - [Economic fallout from abortion bans will hit the poor hardest](https://www.ft.com/content/83da246a-7d33-4453-9015-d1789726af2c)
 - [Where are all the workers? The US states and sectors with the tightest jobs markets](https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a)
