@@ -3,8 +3,9 @@
 
 @import "{{ site.theme }}";
 img:not(.header) {
-  border: 5px solid #333; /* Adds a 5px solid grey border */
-  padding: 0px;             /* Adds space between the image and the border */
-  /* Optional: add some margin around the entire box so it doesn't touch surrounding elements */
-  margin: 10px;
+  border: 0.5rem outset pink;
+  border-radius: 12px;
+  margin: 2rem;
+  padding: 1rem;
+  outline-offset: 0.5rem;
 }
