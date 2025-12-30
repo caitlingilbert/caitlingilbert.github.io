@@ -2,8 +2,8 @@
 ---
 
 @import "{{ site.theme }}";
-not(.sidebar) img {
-  border: 5px solid #333; /* Adds a 2px solid black border */
+not(.header) img {
+  border: 5px solid #333; /* Adds a 5px solid grey border */
   padding: 0px;             /* Adds space between the image and the border */
   /* Optional: add some margin around the entire box so it doesn't touch surrounding elements */
   margin: 10px;
