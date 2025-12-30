@@ -2,7 +2,7 @@
 ---
 
 @import "{{ site.theme }}";
-not(.header) img {
+img:not(.header) {
   border: 5px solid #333; /* Adds a 5px solid grey border */
   padding: 0px;             /* Adds space between the image and the border */
   /* Optional: add some margin around the entire box so it doesn't touch surrounding elements */
