@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caitlin Gilbert — Data Journalist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f5f2ed;
+    --cream: #ece8e1;
+    --rule: #c8bfb0;
+    --accent: #b5271e;
+    --ft-gold: #c4960a;
+    --reuters: #f26524;
+    --muted: #6b6259;
+    --card-bg: #ffffff;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── MASTHEAD ── */
+  header {
+    border-bottom: 3px double var(--rule);
+    padding: 2.5rem 2rem 1.75rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--rule);
+    flex-shrink: 0;
+  }
+
+  .header-center h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .header-center .tagline {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-top: 0.35rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .header-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-end;
+    font-size: 0.8rem;
+  }
+
+  .header-links a {
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+  .header-links a:hover { color: var(--accent); }
+
+  /* ── BIO STRIP ── */
+  .bio-strip {
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 2rem;
+  }
+  .bio-strip p {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+  .bio-strip strong { color: var(--ink); font-weight: 500; }
+
+  /* ── TABS ── */
+  .tabs-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .tabs-nav {
+    display: flex;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs-nav::-webkit-scrollbar { display: none; }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    padding: 0.7rem 1.3rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn[data-tab="wapo"].active    { border-color: var(--accent);  color: var(--accent); }
+  .tab-btn[data-tab="ft"].active      { border-color: var(--ft-gold); color: var(--ft-gold); }
+  .tab-btn[data-tab="reuters"].active { border-color: var(--reuters); color: var(--reuters); }
+  .tab-btn[data-tab="projects"].active{ border-color: #2e7d52;        color: #2e7d52; }
+  .tab-btn[data-tab="writing"].active { border-color: #4a5568;        color: #4a5568; }
+
+  /* ── TAB PANELS ── */
+  .tab-panel {
+    display: none;
+    padding: 2.5rem 0 4rem;
+    animation: fadeIn 0.22s ease;
+  }
+  .tab-panel.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── EYEBROW ── */
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── TILE GRID — uniform squares ── */
+  .tile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .tile-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tile {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: box-shadow 0.18s, transform 0.18s;
+  }
+  .tile:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    transform: translateY(-2px);
+  }
+
+  /* Square image — 1:1 forced */
+  .tile-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .tile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .tile:hover .tile-img img { transform: scale(1.03); }
+
+  .tile-body {
+    padding: 0.85rem 1rem 1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .tile-label {
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .tile-title {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+
+  .tile-arrow {
+    display: inline-block;
+    margin-top: 0.45rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+
+  .wapo-grid    .tile-arrow { color: var(--accent); }
+  .ft-grid      .tile-arrow { color: var(--ft-gold); }
+  .reuters-grid .tile-arrow { color: var(--reuters); }
+  .projects-grid .tile-arrow { color: #2e7d52; }
+
+  /* ── WRITING LIST ── */
+  .writing-list {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .writing-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.1rem 1.5rem;
+    background: var(--card-bg);
+    border-top: 1px solid var(--rule);
+    transition: background 0.15s;
+  }
+  .writing-item:first-child { border-top: none; }
+  .writing-item:hover { background: #fafaf9; }
+
+  .writing-source {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    min-width: 90px;
+  }
+
+  .writing-title {
+    font-family: var(--serif);
+    font-size: 0.97rem;
+    line-height: 1.4;
+  }
+  .writing-title em {
+    display: block;
+    font-style: normal;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 3px double var(--rule);
+    padding: 1.75rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    header { grid-template-columns: auto 1fr; }
+    .header-links { display: none; }
+    .tile-grid { grid-template-columns: repeat(2, 1fr); }
+    .tile-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 460px) {
+    .tile-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header>
+  <img class="avatar" src="images/circle-cropped.png" alt="Caitlin Gilbert" onerror="this.style.display='none'">
+  <div class="header-center">
+    <h1>Caitlin Gilbert</h1>
+    <p class="tagline">Data Journalist &nbsp;·&nbsp; The Washington Post</p>
+  </div>
+  <nav class="header-links">
+    <a href="https://www.linkedin.com/in/caitlin-gilbert/" target="_blank">LinkedIn ↗</a>
+    <a href="https://www.github.com/caitlingilbert/" target="_blank">GitHub ↗</a>
+    <a href="caitlingilbert_resume.pdf" target="_blank">Résumé ↗</a>
+  </nav>
+</header>
+
+<!-- ── BIO STRIP ── -->
+<div class="bio-strip">
+  <p>
+    I'm an award-winning data reporter at <a href="https://www.washingtonpost.com/people/caitlin-gilbert/"><strong>The Washington Post</strong> </a> who uses code to report health, science, and tech stories and investigations. I've led investigations into dietitan influencers, subminimum wages paid to disabled workers, RFK Jr.'s anti-vaccine rhetoric, compulsive use of TikTok, and declining vaccination rates in the US. My work has won a SABEW award and NCDJ's Katherine Schneider disability reporting award. I have been a finalist for Goldsmith and NIHCM awards for investigative reporting in 2025 and 2026. Previously I worked at the <a href="https://www.ft.com/caitlin-gilbert/"><strong>Financial Times</strong></a> &amp; <strong>Reuters</strong>. For my neuroscience PhD work on songbird brains at Rockefeller University, I studied genomics, language development, neuroethology, developmental neurobiology and evolution.
+    &nbsp;&mdash;&nbsp; <a href="mailto:caitlin.gilbert@washpost.com" style="color:inherit">caitlin.gilbert@washpost.com</a>
+  </p>
+</div>
+
+<!-- ── TABS ── -->
+<div class="tabs-wrapper">
+  <nav class="tabs-nav" role="tablist">
+    <button class="tab-btn active" data-tab="wapo"     role="tab" aria-selected="true">Washington Post</button>
+    <button class="tab-btn"        data-tab="ft"       role="tab" aria-selected="false">Financial Times</button>
+    <button class="tab-btn"        data-tab="reuters"  role="tab" aria-selected="false">Reuters</button>
+    <button class="tab-btn"        data-tab="projects" role="tab" aria-selected="false">Other Projects</button>
+    <button class="tab-btn"        data-tab="writing"  role="tab" aria-selected="false">Writing</button>
+  </nav>
+
+  <!-- ═══ WASHINGTON POST ═══ -->
+  <div class="tab-panel active" id="panel-wapo" role="tabpanel">
+    <p class="section-eyebrow">Selected data work</p>
+    <div class="tile-grid wapo-grid">
+
+      <a class="tile" href="https://www.washingtonpost.com/wellness/interactive/2024/disability-subminimum-wages-contract-labor/" target="_blank">
+        <div class="tile-img"><img src="images/subminwage.png" alt="Subminimum Wages" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Wellness · 2024</span>
+          <p class="tile-title">Some disabled workers in the U.S. make pennies per hour. It's legal.</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.washingtonpost.com/nation/2024/05/24/abortion-clinics-wait-time-florida-law/" target="_blank">
+        <div class="tile-img"><img src="images/abortionwaittime.png" alt="Abortion wait times" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Health · 2024</span>
+          <p class="tile-title">Abortion clinic wait times surge after Florida law</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.washingtonpost.com/wellness/2024/04/03/diet-culture-nutrition-influencers-general-mills-processed-food/" target="_blank">
+        <div class="tile-img"><img src="images/antidiet.gif" alt="Anti-diet influencers" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Wellness · 2024</span>
+          <p class="tile-title">The food industry co-opts the anti-diet movement</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.washingtonpost.com/wellness/2023/09/13/dietitian-instagram-tiktok-paid-food-industry/" target="_blank">
+        <div class="tile-img"><img src="images/dietitianinfluencer.png" alt="Dietitian influencers" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Wellness · 2023</span>
+          <p class="tile-title">The food industry pays 'influencer' dietitians to shape your eating habits</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.washingtonpost.com/business/2023/03/15/svb-billions-uninsured-assets-companies/" target="_blank">
+        <div class="tile-img"><img src="images/svb.png" alt="SVB collapse" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Business · 2023</span>
+          <p class="tile-title">SVB collapse: billions in uninsured assets at risk for companies</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ═══ FINANCIAL TIMES ═══ -->
+  <div class="tab-panel" id="panel-ft" role="tabpanel">
+    <p class="section-eyebrow">Selected data and graphics work</p>
+    <div class="tile-grid ft-grid">
+
+      <a class="tile" href="https://ig.ft.com/arizona-election-deniers/" target="_blank">
+        <div class="tile-img"><img src="images/azelection.png" alt="Arizona election deniers" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Politics · 2022</span>
+          <p class="tile-title">How Arizona became ground zero for election deniers</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a/" target="_blank">
+        <div class="tile-img"><img src="images/scatter_gif.gif" alt="US jobs markets" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Economy · 2022</span>
+          <p class="tile-title">Where are all the workers? US states with the tightest jobs markets</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.ft.com/content/5de8f03a-82fa-41a2-928a-27606351c9b4/" target="_blank">
+        <div class="tile-img"><img src="images/flight_routes.gif" alt="Flight routes" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Travel · 2022</span>
+          <p class="tile-title">US flight route data visualization</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.ft.com/content/27cf21ac-dabc-45a5-813f-0223572b908f/" target="_blank">
+        <div class="tile-img"><img src="images/donoroverlap_crossover_2.gif" alt="Donor overlap" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Politics · 2022</span>
+          <p class="tile-title">Megadonors tighten grip on Republican fundraising</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://www.ft.com/content/18ed424a-5689-42e1-bd84-436e37b2a4ea/" target="_blank">
+        <div class="tile-img"><img src="images/fentanyl_lollipopchart.png" alt="Fentanyl overdoses" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Health · 2022</span>
+          <p class="tile-title">Will overdose deaths force an end to the US 'war on drugs'?</p>
+          <span class="tile-arrow">Read story ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ═══ REUTERS ═══ -->
+  <div class="tab-panel" id="panel-reuters" role="tabpanel">
+    <p class="section-eyebrow">Selected graphics work</p>
+    <div class="tile-grid cols-2 reuters-grid">
+
+      <a class="tile" href="https://graphics.reuters.com/STORM-IDA/RAINFALL/akvezzlbzpr/" target="_blank">
+        <div class="tile-img"><img src="images/ida_cp_rainfall.png" alt="Hurricane Ida rainfall" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Climate · 2021</span>
+          <p class="tile-title">Hurricane Ida: tracking catastrophic rainfall across the Northeast</p>
+          <span class="tile-arrow">View graphic ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="https://graphics.reuters.com/STORM-IDA/LANDFALL/lgvdwwgjwpo/" target="_blank">
+        <div class="tile-img"><img src="images/ida_leveed_gulfmap.png" alt="Hurricane Ida landfall" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Climate · 2021</span>
+          <p class="tile-title">Hurricane Ida: mapping levees, surge zones, and the Gulf coast landfall</p>
+          <span class="tile-arrow">View graphic ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ═══ OTHER PROJECTS ═══ -->
+  <div class="tab-panel" id="panel-projects" role="tabpanel">
+    <div class="tile-grid cols-2 projects-grid">
+
+      <a class="tile" href="nyccovidvax.html" target="_blank">
+        <div class="tile-img"><img src="images/nyc_covid_vax_zcta_3-3-21_new.png" alt="NYC Covid vaccination" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Public health · 2021</span>
+          <p class="tile-title">Covid-19 Vaccination and Hospitalization Rates Across NYC</p>
+          <span class="tile-arrow">View project ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="garunoff.html" target="_blank">
+        <div class="tile-img"><img src="images/ga_runoff_dropoff_race_1.2.21.gif" alt="Georgia runoff" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Elections · 2021</span>
+          <p class="tile-title">Georgia Runoff Election Turnout Demography</p>
+          <span class="tile-arrow">View project ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="redlisthierarchy.html" target="_blank">
+        <div class="tile-img"><img src="images/redlist_hierarchy_plot.png" alt="Endangered species" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Science · 2020</span>
+          <p class="tile-title">Endangered &amp; Extinct Species Across Mammalian Orders</p>
+          <span class="tile-arrow">View project ↗</span>
+        </div>
+      </a>
+
+      <a class="tile" href="queensrace.html" target="_blank">
+        <div class="tile-img"><img src="images/queens_race_dotplot.png" alt="Queens racial dot plot" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="tile-label">Demographics · 2020</span>
+          <p class="tile-title">Racial Dot Plot of Queens, NY</p>
+          <span class="tile-arrow">View project ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ═══ WRITING ═══ -->
+  <div class="tab-panel" id="panel-writing" role="tabpanel">
+    <p class="section-eyebrow">Selected publications, reporting &amp; talks</p>
+    <div class="writing-list">
+      <a class="writing-item" href="https://www.washingtonpost.com/wellness/interactive/2024/disability-subminimum-wages-contract-labor/" target="_blank">
+        <span class="writing-source">WaPo</span>
+        <span class="writing-title">Some disabled workers in the U.S. make pennies per hour. It's legal. <em>2024</em></span>
+      </a>
+      <a class="writing-item" href="https://www.washingtonpost.com/wellness/2023/09/13/dietitian-instagram-tiktok-paid-food-industry/" target="_blank">
+        <span class="writing-source">WaPo</span>
+        <span class="writing-title">The food industry pays 'influencer' dietitians to shape your eating habits <em>2023</em></span>
+      </a>
+      <a class="writing-item" href="https://www.washingtonpost.com/wellness/2023/07/13/alcohol-consumption-deaths/" target="_blank">
+        <span class="writing-source">WaPo</span>
+        <span class="writing-title">Alcohol consumption surged during the pandemic — and deaths followed <em>2023</em></span>
+      </a>
+      <a class="writing-item" href="https://www.washingtonpost.com/health/2023/06/15/abortion-transgender-christian-doctors/" target="_blank">
+        <span class="writing-source">WaPo</span>
+        <span class="writing-title">Documents show how conservative doctors influenced abortion, trans rights <em>2023</em></span>
+      </a>
+      <a class="writing-item" href="https://ig.ft.com/arizona-election-deniers/" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">How Arizona became ground zero for election deniers <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://www.ft.com/content/87c5687f-d564-4e8e-a1e7-5828a77cfeaa" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">Megadonors tighten grip on Republican fundraising <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://www.ft.com/content/88ee0e7e-ec32-4878-9e80-b702423360d5" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">These Senate hopefuls won Trump's endorsement. Now they are struggling. <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://www.ft.com/content/83da246a-7d33-4453-9015-d1789726af2c" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">Economic fallout from abortion bans will hit the poor hardest <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">Where are all the workers? The US states and sectors with the tightest jobs markets <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://www.ft.com/content/3a00b5a9-24c6-4122-bcf5-f950881baf82" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">More women forced to travel to seek abortions as US states clamp down <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://www.ft.com/content/18ed424a-5689-42e1-bd84-436e37b2a4ea" target="_blank">
+        <span class="writing-source">FT</span>
+        <span class="writing-title">Will overdose deaths force an end to the US 'war on drugs'? <em>2022</em></span>
+      </a>
+      <a class="writing-item" href="https://rockedu.rockefeller.edu/component/datavizcovid/" target="_blank">
+        <span class="writing-source">RockEDU</span>
+        <span class="writing-title">Data Visualization and Covid-19: Challenges and Best Practices <em>Talk · 2021</em></span>
+      </a>
+      <a class="writing-item" href="https://rockedu.rockefeller.edu/component/covid19datavizrshiny/" target="_blank">
+        <span class="writing-source">RockEDU</span>
+        <span class="writing-title">How to Code an Interactive Map of Covid-19 Cases in NYC <em>Tutorial · 2021</em></span>
+      </a>
+      <a class="writing-item" href="https://www.nature.com/articles/nature14319" target="_blank">
+        <span class="writing-source">Nature</span>
+        <span class="writing-title">Disruption of DNA-methylation-dependent long gene repression in Rett syndrome <em>Research · 2015</em></span>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /tabs-wrapper -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    <a href="caitlingilbert_resume.pdf" target="_blank">Résumé</a> &nbsp;·&nbsp;
+    <a href="mailto:caitlin.gilbert@washpost.com">caitlin.gilbert@washpost.com</a> &nbsp;·&nbsp;
+    <a href="https://github.com/caitlingilbert" target="_blank">GitHub</a> &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/caitlin-gilbert/" target="_blank">LinkedIn</a>
+    <br><br>
+    <span style="font-size:0.72rem">Shoot me a message if you'd like to read any of the paywalled links.</span>
+  </p>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById('panel-' + target).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
