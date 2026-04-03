@@ -194,17 +194,18 @@
     border-radius: 3px;
     overflow: hidden;
     transition: box-shadow 0.18s, transform 0.18s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
   }
   .tile:hover {
-    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.22);
     transform: translateY(-2px);
   }
 
-  /* Square image — 1:1 forced, image contained with padding so nothing is cropped */
+  /* Square image — 1:1 forced */
   .tile-img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: var(--cream);
+    background: #1e2a3a;
     display: flex;
     align-items: center;
     justify-content: center;
