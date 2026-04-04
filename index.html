@@ -144,6 +144,7 @@
   .tab-btn[data-tab="reuters"].active { border-color: var(--reuters); color: var(--reuters); }
   .tab-btn[data-tab="projects"].active{ border-color: #2e7d52;        color: #2e7d52; }
   .tab-btn[data-tab="writing"].active { border-color: #4a5568;        color: #4a5568; }
+  .tab-btn[data-tab="talks"].active   { border-color: #2f237a;        color: #2f237a; }
 
   /* ── TAB PANELS ── */
   .tab-panel {
@@ -388,6 +389,52 @@
     margin-top: 0.2rem;
   }
 
+   /* ── TALKS LIST ── */
+  .talks-list {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .talks-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.1rem 1.5rem;
+    background: var(--card-bg);
+    border-top: 1px solid var(--rule);
+    transition: background 0.15s;
+  }
+  .talks-item:first-child { border-top: none; }
+  .talks-item:hover { background: #fafaf9; }
+
+  .talks-source {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    min-width: 90px;
+  }
+
+  .talks-title {
+    font-family: var(--serif);
+    font-size: 0.97rem;
+    line-height: 1.4;
+  }
+  .talks-title em {
+    display: block;
+    font-style: normal;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+ 
   /* ── FOOTER ── */
   footer {
     border-top: 3px double var(--rule);
@@ -463,6 +510,7 @@
     <button class="tab-btn"        data-tab="reuters"  role="tab" aria-selected="false">Reuters</button>
     <button class="tab-btn"        data-tab="projects" role="tab" aria-selected="false">Other Projects</button>
     <button class="tab-btn"        data-tab="writing"  role="tab" aria-selected="false">Writing &amp; Teaching</button>
+    <button class="tab-btn"        data-tab="talks"    role="tab" aria-selected="false">Talks &amp; Media</button>
   </nav>
 
   <!-- ═══ WASHINGTON POST ═══ -->
@@ -675,11 +723,15 @@
 
   <!-- ═══ WRITING &amp; TEACHING ═══ -->
   <div class="tab-panel" id="panel-writing" role="tabpanel">
-    <p class="section-eyebrow">Selected stories &amp; papers</p>
+    <p class="section-eyebrow">Writing</p>
     <div class="writing-list">
+     <a class="writing-item" href="https://www.washingtonpost.com/investigations/interactive/2025/va-disability-ratings-profit-consultants/" target="_blank">
+        <span class="writing-source">WaPo</span>
+        <span class="writing-title">The unregulated industry that coaches veterans to pile on benefits <em>2024</em></span>
+      </a>
       <a class="writing-item" href="https://www.washingtonpost.com/wellness/interactive/2024/disability-subminimum-wages-contract-labor/" target="_blank">
         <span class="writing-source">WaPo</span>
-        <span class="writing-title">Some disabled workers in the U.S. make pennies per hour. It's legal. <em>2024</em></span>
+        <span class="writing-title">Why some U.S. disabled workers are making less than a dollar an hour <em>2024</em></span>
       </a>
       <a class="writing-item" href="https://www.washingtonpost.com/wellness/2023/09/13/dietitian-instagram-tiktok-paid-food-industry/" target="_blank">
         <span class="writing-source">WaPo</span>
@@ -692,10 +744,6 @@
       <a class="writing-item" href="https://www.washingtonpost.com/health/2023/06/15/abortion-transgender-christian-doctors/" target="_blank">
         <span class="writing-source">WaPo</span>
         <span class="writing-title">Documents show how conservative doctors influenced abortion, trans rights <em>2023</em></span>
-      </a>
-      <a class="writing-item" href="https://ig.ft.com/arizona-election-deniers/" target="_blank">
-        <span class="writing-source">FT</span>
-        <span class="writing-title">How Arizona became ground zero for election deniers <em>2022</em></span>
       </a>
       <a class="writing-item" href="https://www.ft.com/content/87c5687f-d564-4e8e-a1e7-5828a77cfeaa" target="_blank">
         <span class="writing-source">FT</span>
@@ -712,10 +760,6 @@
       <a class="writing-item" href="https://www.ft.com/content/9c5b5025-a995-494c-83a5-65ef04952a1a" target="_blank">
         <span class="writing-source">FT</span>
         <span class="writing-title">Where are all the workers? The US states and sectors with the tightest jobs markets <em>2022</em></span>
-      </a>
-      <a class="writing-item" href="https://www.ft.com/content/3a00b5a9-24c6-4122-bcf5-f950881baf82" target="_blank">
-        <span class="writing-source">FT</span>
-        <span class="writing-title">More women forced to travel to seek abortions as US states clamp down <em>2022</em></span>
       </a>
       <a class="writing-item" href="https://www.ft.com/content/18ed424a-5689-42e1-bd84-436e37b2a4ea" target="_blank">
         <span class="writing-source">FT</span>
@@ -744,6 +788,28 @@
     </div>
   </div>
 
+<!-- ═══ TALKS &amp; MEDIA ═══ -->
+  <div class="tab-panel" id="panel-talks" role="tabpanel">
+    <div class="talks-list">
+      <a class="talks-item" href="https://youtu.be/4jH6LmHI1UE?si=cbg65ACCWZD--n5d&t=1838" target="_blank">
+        <span class="talks-source">TV</span>
+        <span class="talks-title">NBC Top Story with Tom Llamas 10/8/25: TikTok Investigation (30:39) <em>2025</em></span>
+      </a>
+      <a class="talks-item" href="https://youtu.be/9wIlK9hiG4w?si=AvZ17SRGRvOOZUC5&t=2148" target="_blank">
+        <span class="talks-source">TV</span>
+        <span class="talks-title">NBC Morning News NOW 10/9/25: TikTok Investigation (35:48) <em>2025</em></span>
+      </a>
+     <a class="talks-item" href="https://creators.spotify.com/pod/profile/incision-media/episodes/How-Big-Food-Tries-to-Co-Opt-the-Anti-Diet-Movement-e3dt0au>
+        <span class="talks-source">Podcast/Radio</span>
+        <span class="talks-title"> America Dissected: How Big Food Tries to Co-Opt the Anti-Diet Movement <em>2024</em></span>
+      </a>
+     <a class="talks-item" href="https://www.youtube.com/watch?v=f4H3dPkG8Uo" target="_blank">
+        <span class="talks-source">TV</span>
+        <span class="talks-title">WGN9 News: Disabled workers making less than minimum wage <em>2024</em></span>
+      </a>
+    </div>
+  </div>
+ 
 </div><!-- /tabs-wrapper -->
 
 <!-- ═══ PROJECT MODAL (outside tabs-wrapper) ═══ -->
