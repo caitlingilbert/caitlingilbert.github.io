@@ -104,6 +104,7 @@
     line-height: 1.7;
   }
   .bio-strip strong { color: var(--ink); font-weight: 500; }
+  .bio-strip a { color: var(--muted); }
 
   /* ── TABS ── */
   .tabs-wrapper {
@@ -175,7 +176,7 @@
     background: var(--rule);
   }
 
-  /* ── TILE GRID — uniform squares ── */
+  /* ── TILE GRID ── */
   .tile-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -193,15 +194,15 @@
     border: 1px solid var(--rule);
     border-radius: 3px;
     overflow: hidden;
-    transition: box-shadow 0.18s, transform 0.18s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    transition: box-shadow 0.18s, transform 0.18s;
+    cursor: pointer;
   }
   .tile:hover {
     box-shadow: 0 8px 28px rgba(0,0,0,0.22);
     transform: translateY(-2px);
   }
 
-  /* Square image — 1:1 forced */
   .tile-img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -209,11 +210,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0.75rem;
+    overflow: hidden;
   }
   .tile-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     transition: transform 0.35s ease;
   }
@@ -248,10 +251,97 @@
     color: var(--muted);
   }
 
-  .wapo-grid    .tile-arrow { color: var(--accent); }
-  .ft-grid      .tile-arrow { color: var(--ft-gold); }
-  .reuters-grid .tile-arrow { color: var(--reuters); }
+  .wapo-grid     .tile-arrow { color: var(--accent); }
+  .ft-grid       .tile-arrow { color: var(--ft-gold); }
+  .reuters-grid  .tile-arrow { color: var(--reuters); }
   .projects-grid .tile-arrow { color: #2e7d52; }
+
+  /* ── PROJECT MODAL ── */
+  .project-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,20,20,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    backdrop-filter: blur(3px);
+  }
+  .project-overlay.open {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+  }
+  .project-modal {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    max-width: 780px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.35);
+    position: relative;
+  }
+  .modal-img {
+    width: 100%;
+    background: #1e2a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 260px;
+  }
+  .modal-img img {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+  }
+  .modal-body {
+    padding: 1.75rem 2rem 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .modal-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .modal-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .modal-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .modal-desc a { color: var(--ink); }
+  .modal-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    z-index: 1;
+  }
+  .modal-close:hover { background: rgba(0,0,0,0.7); }
 
   /* ── WRITING LIST ── */
   .writing-list {
@@ -310,6 +400,27 @@
   }
   footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+  .footer-social a:hover { color: var(--ink); }
+  .footer-social svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
     header { grid-template-columns: auto 1fr; }
@@ -341,7 +452,7 @@
 <!-- ── BIO STRIP ── -->
 <div class="bio-strip">
   <p>
-    I'm an award-winning data reporter based in New York who uses code to report health, science, and tech stories at <a href="https://www.washingtonpost.com/people/caitlin-gilbert/"><strong>The Washington Post</strong> </a>. I've led investigations into dietitan influencers, subminimum wages paid to disabled workers, RFK Jr.'s anti-vaccine rhetoric, compulsive use of TikTok, and declining vaccination rates in the US. My work has won a SABEW award and NCDJ's Katherine Schneider disability reporting award, and I have been a finalist for Goldsmith and NIHCM awards for investigative reporting in 2025 and 2026. Previously, I worked at the <a href="https://www.ft.com/caitlin-gilbert/"><strong>Financial Times</strong></a> &amp; <strong>Reuters</strong>. For my PhD work on songbird brains, I studied genomics, language development, neuroethology, developmental neurobiology and evolution.
+    I'm an award-winning data reporter based in New York who uses code to report health, science, and tech stories at <a href="https://www.washingtonpost.com/people/caitlin-gilbert/"><strong>The Washington Post</strong></a>. I've led investigations into dietitian influencers, subminimum wages paid to disabled workers, RFK Jr.'s anti-vaccine rhetoric, compulsive use of TikTok, and declining vaccination rates in the US. My work has won a SABEW award and NCDJ's Katherine Schneider disability reporting award, and I have been a finalist for Goldsmith and NIHCM awards for investigative reporting in 2025 and 2026. Previously, I worked at the <a href="https://www.ft.com/caitlin-gilbert/"><strong>Financial Times</strong></a> &amp; <strong>Reuters</strong>. For my PhD work on songbird brains, I studied genomics, language development, neuroethology, developmental neurobiology and evolution.
   </p>
 </div>
 
@@ -359,7 +470,7 @@
   <div class="tab-panel active" id="panel-wapo" role="tabpanel">
     <div class="tile-grid wapo-grid">
 
-     <a class="tile" href="https://www.washingtonpost.com/health/interactive/2025/measles-vaccine-schools-outbreaks-public-health/" target="_blank">
+      <a class="tile" href="https://www.washingtonpost.com/health/interactive/2025/measles-vaccine-schools-outbreaks-public-health/" target="_blank">
         <div class="tile-img"><img src="images/vaxmap.gif" alt="Vaccination Rates US Map" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Health · 2025</span>
@@ -367,8 +478,8 @@
           <span class="tile-arrow">Read story ↗</span>
         </div>
       </a>
-     
-     <a class="tile" href="https://www.washingtonpost.com/wellness/interactive/2025/tiktok-addiction-algorithm-scrolling-mental-health/" target="_blank">
+
+      <a class="tile" href="https://www.washingtonpost.com/wellness/interactive/2025/tiktok-addiction-algorithm-scrolling-mental-health/" target="_blank">
         <div class="tile-img"><img src="images/tiktokcompulsive.gif" alt="Daily TikTok watch times over five months" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Tech/Wellness · 2025</span>
@@ -376,8 +487,8 @@
           <span class="tile-arrow">Read the series ↗</span>
         </div>
       </a>
-     
-     <a class="tile" href="https://www.washingtonpost.com/investigations/interactive/2025/veterans-affairs-disability-claims-fraud/" target="_blank">
+
+      <a class="tile" href="https://www.washingtonpost.com/investigations/interactive/2025/veterans-affairs-disability-claims-fraud/" target="_blank">
         <div class="tile-img"><img src="images/vadisability.png" alt="VA Disability Benefit Recipients" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Investigative · 2025</span>
@@ -386,7 +497,7 @@
         </div>
       </a>
 
-     <a class="tile" href="https://www.washingtonpost.com/health/2025/01/28/rfk-jr-disparaged-vaccines-dozens-times-recent-years-misled-race/" target="_blank">
+      <a class="tile" href="https://www.washingtonpost.com/health/2025/01/28/rfk-jr-disparaged-vaccines-dozens-times-recent-years-misled-race/" target="_blank">
         <div class="tile-img"><img src="images/rfkjr.png" alt="RFK Jr." loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Health · 2025</span>
@@ -394,7 +505,7 @@
           <span class="tile-arrow">Read the story ↗</span>
         </div>
       </a>
-     
+
       <a class="tile" href="https://www.washingtonpost.com/wellness/interactive/2024/disability-subminimum-wages-contract-labor/" target="_blank">
         <div class="tile-img"><img src="images/subminwage.png" alt="Subminimum Wages" loading="lazy"></div>
         <div class="tile-body">
@@ -524,41 +635,41 @@
   <div class="tab-panel" id="panel-projects" role="tabpanel">
     <div class="tile-grid cols-2 projects-grid">
 
-      <a class="tile" href="nyccovidvax.html" target="_blank">
+      <div class="tile" role="button" tabindex="0" data-project="nyc">
         <div class="tile-img"><img src="images/nyc_covid_vax_zcta_3-3-21_new.png" alt="NYC Covid vaccination" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Public health · 2021</span>
           <p class="tile-title">Covid-19 Vaccination and Hospitalization Rates Across NYC</p>
-          <span class="tile-arrow">View project ↗</span>
+          <span class="tile-arrow">View details ↓</span>
         </div>
-      </a>
+      </div>
 
-      <a class="tile" href="garunoff.html" target="_blank">
+      <div class="tile" role="button" tabindex="0" data-project="ga">
         <div class="tile-img"><img src="images/ga_runoff_dropoff_race_1.2.21.gif" alt="Georgia runoff" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Elections · 2021</span>
           <p class="tile-title">Georgia Runoff Election Turnout Demography</p>
-          <span class="tile-arrow">View project ↗</span>
+          <span class="tile-arrow">View details ↓</span>
         </div>
-      </a>
+      </div>
 
-      <a class="tile" href="redlisthierarchy.html" target="_blank">
+      <div class="tile" role="button" tabindex="0" data-project="redlist">
         <div class="tile-img"><img src="images/redlist_hierarchy_plot.png" alt="Endangered species" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Science · 2020</span>
           <p class="tile-title">Endangered &amp; Extinct Species Across Mammalian Orders</p>
-          <span class="tile-arrow">View project ↗</span>
+          <span class="tile-arrow">View details ↓</span>
         </div>
-      </a>
+      </div>
 
-      <a class="tile" href="queensrace.html" target="_blank">
+      <div class="tile" role="button" tabindex="0" data-project="queens">
         <div class="tile-img"><img src="images/queens_race_dotplot.png" alt="Queens racial dot plot" loading="lazy"></div>
         <div class="tile-body">
           <span class="tile-label">Demographics · 2020</span>
           <p class="tile-title">Racial Dot Plot of Queens, NY</p>
-          <span class="tile-arrow">View project ↗</span>
+          <span class="tile-arrow">View details ↓</span>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
@@ -628,22 +739,37 @@
 
 </div><!-- /tabs-wrapper -->
 
+<!-- ═══ PROJECT MODAL (outside tabs-wrapper) ═══ -->
+<div class="project-overlay" id="projectOverlay" role="dialog" aria-modal="true">
+  <div class="project-modal" id="projectModal">
+    <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
+    <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-body">
+      <span class="modal-label" id="modalLabel"></span>
+      <p class="modal-title" id="modalTitle"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+    </div>
+  </div>
+</div>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-social">
     <a href="https://bsky.app/profile/caitlingilbert.bsky.social" target="_blank" aria-label="Bluesky">
-      <!-- Bluesky butterfly -->
-      <svg width="24" height="24" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg"><path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.107 11.421-142.55-7.449-163.25-81.433C20.15 217.613 10 86.535 10 68.825c0-88.687 77.742-60.816 125.72-24.795z"/></svg></a>
+      <svg width="24" height="24" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg"><path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.107 11.421-142.55-7.449-163.25-81.433C20.15 217.613 10 86.535 10 68.825c0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+    </a>
     <a href="https://www.tiktok.com/@caitlingilbertdata" target="_blank" aria-label="TikTok">
-      <!-- TikTok -->
-      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+    </a>
     <a href="https://www.instagram.com/caitlingilbertdata" target="_blank" aria-label="Instagram">
-      <!-- Instagram -->
-      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
     <a href="https://www.linkedin.com/in/caitlin-gilbert/" target="_blank" aria-label="LinkedIn">
-      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
     <a href="https://www.github.com/caitlingilbert/" target="_blank" aria-label="GitHub">
-      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
   </div>
   <p>
     caitlin.gilbert&#64;washpost.com
@@ -666,7 +792,7 @@
       document.getElementById('panel-' + target).classList.add('active');
     });
   });
- 
+
   // ── PROJECT MODAL DATA ──
   const projects = {
     nyc: {
@@ -682,7 +808,7 @@
       desc: `62% of Georgia voters (~2.5M) who participated in the 2018 general election (~3.9M) did not vote in the subsequent runoff election. Analyzing the dropoff in voting between the November 2020 presidential election and the 2021 runoffs in GA after the early voting period helped direct campaigns/voter outreach orgs' efforts before election day. Interactive maps shown in the animation used voter file and vote history data from the Georgia Secretary of State as of 1/2/21. Each map shows the percent of November voters who had not yet voted in the runoff, across every county with at least 500 coded voters of each race. The animation shows these county breakdowns for Black, AAPI, and Hispanic voters in Georgia. Plot was made using R (leaflet).`
     },
     redlist: {
-      label: 'Environment · 2020',
+      label: 'Science · 2020',
       title: 'Conservation Status of Red List Mammals, Across Hierarchical Orders',
       img: 'images/redlist_hierarchy_plot.png',
       desc: `Plot represents 5,850 mammalian species on IUCN's Red List, with different taxonomic orders hierarchically colored and labeled. Black points represent extinct or possibly extinct species. Grey points represent species that are critically endangered or extinct in the wild. Species data is from the <a href="https://www.iucnredlist.org/search?taxonomies=100041&searchType=species" target="_blank">IUCN's site</a>. Code to generate plot adapted from Maarten Lambrechts. Plot was made using R.`
@@ -694,35 +820,37 @@
       desc: `Census race data is from the 2016 5-Year American Community Survey (2012–2016). Each dot represents 200 people. Terrain boundaries and major roads are displayed in light grey. Occasionally, dots appear outside of grey boundaries, due to the extension of county boundaries into water surrounding the terrain. Plot was made using R.`
     }
   };
- 
-  const overlay  = document.getElementById('projectOverlay');
+
+  const overlay   = document.getElementById('projectOverlay');
   const modalImg   = document.getElementById('modalImg');
   const modalLabel = document.getElementById('modalLabel');
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc  = document.getElementById('modalDesc');
- 
+
   function openProject(key) {
     const p = projects[key];
     if (!p) return;
-    modalImg.src       = p.img;
-    modalImg.alt       = p.title;
-    modalLabel.textContent = p.label;
-    modalTitle.textContent = p.title;
-    modalDesc.innerHTML    = p.desc;
+    modalImg.src               = p.img;
+    modalImg.alt               = p.title;
+    modalLabel.textContent     = p.label;
+    modalTitle.textContent     = p.title;
+    modalDesc.innerHTML        = p.desc;
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
- 
+
   function closeModal() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
   }
- 
+
   document.querySelectorAll('[data-project]').forEach(tile => {
     tile.addEventListener('click', () => openProject(tile.dataset.project));
-    tile.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openProject(tile.dataset.project); });
+    tile.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') openProject(tile.dataset.project);
+    });
   });
- 
+
   document.getElementById('modalClose').addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
