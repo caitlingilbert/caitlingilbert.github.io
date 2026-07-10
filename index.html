@@ -6,22 +6,25 @@
 <title>Caitlin Gilbert — Data Journalist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #1a1a1a;
-    --paper: #f5f2ed;
-    --cream: #ece8e1;
-    --rule: #c8bfb0;
-    --accent: #b5271e;
-    --ft-gold: #c4960a;
-    --reuters: #f26524;
-    --muted: #6b6259;
+    --ink: #14142b;
+    --paper: #fbfaff;
+    --cream: #f0eefb;
+    --rule: #e3e0f0;
+    --accent: #ef476f;      /* WaPo — rose */
+    --ft-gold: #f59e0b;     /* FT — amber */
+    --reuters: #118ab2;     /* Reuters — blue */
+    --projects: #06d6a0;    /* Projects — teal */
+    --writing: #8338ec;     /* Writing — purple */
+    --talks: #ff6b35;       /* Talks — orange */
+    --muted: #6c6a86;
     --card-bg: #ffffff;
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -30,14 +33,15 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 
   /* ── MASTHEAD ── */
   header {
-    border-bottom: 3px double var(--rule);
+    border-bottom: 2px solid var(--ink);
     padding: 2.5rem 2rem 1.75rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -52,24 +56,25 @@
     height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--rule);
+    border: 3px solid var(--accent);
     flex-shrink: 0;
   }
 
   .header-center h1 {
     font-family: var(--serif);
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+    line-height: 1;
   }
 
   .header-center .tagline {
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-top: 0.35rem;
-    letter-spacing: 0.04em;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
@@ -85,6 +90,7 @@
     color: var(--muted);
     text-decoration: none;
     letter-spacing: 0.02em;
+    font-weight: 500;
     transition: color 0.15s;
   }
   .header-links a:hover { color: var(--accent); }
@@ -92,19 +98,20 @@
   /* ── BIO STRIP ── */
   .bio-strip {
     background: var(--cream);
-    border-bottom: 1px solid var(--rule);
-    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--ink);
+    padding: 1.25rem 2rem;
   }
   .bio-strip p {
     max-width: 860px;
     margin: 0 auto;
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--ink);
     text-align: center;
-    line-height: 1.7;
+    line-height: 1.75;
   }
-  .bio-strip strong { color: var(--ink); font-weight: 500; }
-  .bio-strip a { color: var(--muted); }
+  .bio-strip strong { color: var(--ink); font-weight: 600; }
+  .bio-strip a { color: var(--accent); font-weight: 500; text-decoration: none; }
+  .bio-strip a:hover { text-decoration: underline; }
 
   /* ── TABS ── */
   .tabs-wrapper {
@@ -115,7 +122,7 @@
 
   .tabs-nav {
     display: flex;
-    border-bottom: 2px solid var(--rule);
+    border-bottom: 2px solid var(--ink);
     margin-top: 2rem;
     overflow-x: auto;
     scrollbar-width: none;
@@ -129,22 +136,21 @@
     margin-bottom: -2px;
     padding: 0.7rem 1.3rem;
     font-family: var(--sans);
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     color: var(--muted);
     cursor: pointer;
     white-space: nowrap;
     transition: color 0.15s, border-color 0.15s;
   }
   .tab-btn:hover { color: var(--ink); }
-  .tab-btn[data-tab="wapo"].active    { border-color: var(--accent);  color: var(--accent); }
-  .tab-btn[data-tab="ft"].active      { border-color: var(--ft-gold); color: var(--ft-gold); }
-  .tab-btn[data-tab="reuters"].active { border-color: var(--reuters); color: var(--reuters); }
-  .tab-btn[data-tab="projects"].active{ border-color: #2e7d52;        color: #2e7d52; }
-  .tab-btn[data-tab="writing"].active { border-color: #4a5568;        color: #4a5568; }
-  .tab-btn[data-tab="talks"].active   { border-color: #2f237a;        color: #2f237a; }
+  .tab-btn[data-tab="wapo"].active    { border-color: var(--accent);   color: var(--accent); }
+  .tab-btn[data-tab="ft"].active      { border-color: var(--ft-gold);  color: var(--ft-gold); }
+  .tab-btn[data-tab="reuters"].active { border-color: var(--reuters);  color: var(--reuters); }
+  .tab-btn[data-tab="projects"].active{ border-color: var(--projects); color: #059e77; }
+  .tab-btn[data-tab="writing"].active { border-color: var(--writing);  color: var(--writing); }
+  .tab-btn[data-tab="talks"].active   { border-color: var(--talks);    color: var(--talks); }
 
   /* ── TAB PANELS ── */
   .tab-panel {
@@ -162,9 +168,10 @@
   /* ── EYEBROW ── */
   .section-eyebrow {
     font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
+    font-weight: 600;
+    color: var(--writing);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -173,7 +180,7 @@
   .section-eyebrow::after {
     content: '';
     flex: 1;
-    height: 1px;
+    height: 2px;
     background: var(--rule);
   }
 
@@ -192,22 +199,25 @@
     text-decoration: none;
     color: inherit;
     background: var(--card-bg);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    box-shadow: 4px 4px 0 var(--rule);
     transition: box-shadow 0.18s, transform 0.18s;
     cursor: pointer;
   }
   .tile:hover {
-    box-shadow: 0 8px 28px rgba(0,0,0,0.22);
-    transform: translateY(-2px);
+    box-shadow: 6px 6px 0 var(--accent);
+    transform: translateY(-3px);
   }
+  .ft-grid       .tile:hover { box-shadow: 6px 6px 0 var(--ft-gold); }
+  .reuters-grid  .tile:hover { box-shadow: 6px 6px 0 var(--reuters); }
+  .projects-grid .tile:hover { box-shadow: 6px 6px 0 var(--projects); }
 
   .tile-img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: #ece8e1;
+    background: var(--cream);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,7 +234,7 @@
 
   .tile-body {
     padding: 0.85rem 1rem 1rem;
-    border-top: 1px solid var(--rule);
+    border-top: 1.5px solid var(--ink);
   }
 
   .tile-label {
@@ -238,15 +248,17 @@
 
   .tile-title {
     font-family: var(--serif);
-    font-size: 0.95rem;
-    line-height: 1.35;
-    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .tile-arrow {
     display: inline-block;
     margin-top: 0.45rem;
     font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--muted);
   }
@@ -254,14 +266,14 @@
   .wapo-grid     .tile-arrow { color: var(--accent); }
   .ft-grid       .tile-arrow { color: var(--ft-gold); }
   .reuters-grid  .tile-arrow { color: var(--reuters); }
-  .projects-grid .tile-arrow { color: #2e7d52; }
+  .projects-grid .tile-arrow { color: #059e77; }
 
   /* ── PROJECT MODAL ── */
   .project-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(20,20,20,0.6);
+    background: rgba(20,20,43,0.55);
     z-index: 1000;
     align-items: center;
     justify-content: center;
@@ -274,18 +286,18 @@
   }
   .project-modal {
     background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
+    border: 2px solid var(--ink);
+    border-radius: 18px;
     max-width: 780px;
     width: 100%;
     max-height: 88vh;
     overflow-y: auto;
-    box-shadow: 0 16px 60px rgba(0,0,0,0.35);
+    box-shadow: 10px 10px 0 var(--accent);
     position: relative;
   }
   .modal-img {
     width: 100%;
-    background: #1e2a3a;
+    background: #14142b;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,21 +312,23 @@
   }
   .modal-body {
     padding: 1.75rem 2rem 2rem;
-    border-top: 1px solid var(--rule);
+    border-top: 2px solid var(--ink);
   }
   .modal-label {
     font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--muted);
+    font-weight: 600;
+    color: var(--projects);
     display: block;
     margin-bottom: 0.4rem;
   }
   .modal-title {
     font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 700;
-    line-height: 1.25;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
     margin-bottom: 1rem;
   }
   .modal-desc {
@@ -322,12 +336,12 @@
     color: var(--muted);
     line-height: 1.8;
   }
-  .modal-desc a { color: var(--ink); }
+  .modal-desc a { color: var(--accent); font-weight: 500; }
   .modal-close {
     position: absolute;
     top: 0.85rem;
     right: 0.85rem;
-    background: rgba(0,0,0,0.45);
+    background: var(--ink);
     border: none;
     color: #fff;
     font-size: 1rem;
@@ -341,18 +355,18 @@
     transition: background 0.15s;
     z-index: 1;
   }
-  .modal-close:hover { background: rgba(0,0,0,0.7); }
+  .modal-close:hover { background: var(--accent); }
 
-  /* ── WRITING LIST ── */
-  .writing-list {
+  /* ── WRITING / TALKS LISTS ── */
+  .writing-list, .talks-list {
     display: flex;
     flex-direction: column;
-    border: 1.5px solid var(--rule);
-    border-radius: 2px;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
     overflow: hidden;
   }
 
-  .writing-item {
+  .writing-item, .talks-item {
     display: flex;
     align-items: baseline;
     gap: 1rem;
@@ -363,70 +377,35 @@
     border-top: 1px solid var(--rule);
     transition: background 0.15s;
   }
-  .writing-item:first-child { border-top: none; }
-  .writing-item:hover { background: #fafaf9; }
+  .writing-item:first-child, .talks-item:first-child { border-top: none; }
+  .writing-item:hover, .talks-item:hover { background: var(--cream); }
 
   .writing-source {
     font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--muted);
+    font-weight: 600;
+    color: var(--writing);
     white-space: nowrap;
     min-width: 90px;
   }
-
-  .writing-title {
-    font-family: var(--serif);
-    font-size: 0.97rem;
-    line-height: 1.4;
-  }
-  .writing-title em {
-    display: block;
-    font-style: normal;
-    font-family: var(--sans);
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }
-
-   /* ── TALKS LIST ── */
-  .talks-list {
-    display: flex;
-    flex-direction: column;
-    border: 1.5px solid var(--rule);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .talks-item {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    text-decoration: none;
-    color: inherit;
-    padding: 1.1rem 1.5rem;
-    background: var(--card-bg);
-    border-top: 1px solid var(--rule);
-    transition: background 0.15s;
-  }
-  .talks-item:first-child { border-top: none; }
-  .talks-item:hover { background: #fafaf9; }
-
   .talks-source {
     font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--muted);
+    font-weight: 600;
+    color: var(--talks);
     white-space: nowrap;
     min-width: 90px;
   }
 
-  .talks-title {
+  .writing-title, .talks-title {
     font-family: var(--serif);
-    font-size: 0.97rem;
-    line-height: 1.4;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.35;
   }
-  .talks-title em {
+  .writing-title em, .talks-title em {
     display: block;
     font-style: normal;
     font-family: var(--sans);
@@ -434,17 +413,17 @@
     color: var(--muted);
     margin-top: 0.2rem;
   }
- 
+
   /* ── FOOTER ── */
   footer {
-    border-top: 3px double var(--rule);
+    border-top: 2px solid var(--ink);
     padding: 1.75rem 2rem;
     text-align: center;
     font-size: 0.8rem;
     color: var(--muted);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
-  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+  footer a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
   .footer-social {
     display: flex;
@@ -456,10 +435,10 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--muted);
-    transition: color 0.15s;
+    color: var(--ink);
+    transition: color 0.15s, transform 0.15s;
   }
-  .footer-social a:hover { color: var(--ink); }
+  .footer-social a:hover { color: var(--accent); transform: translateY(-2px); }
   .footer-social svg {
     width: 24px;
     height: 24px;
@@ -721,11 +700,11 @@
     </div>
   </div>
 
-  <!-- ═══ WRITING &amp; TEACHING ═══ -->
+  <!-- ═══ WRITING & TEACHING ═══ -->
   <div class="tab-panel" id="panel-writing" role="tabpanel">
     <p class="section-eyebrow">Writing</p>
     <div class="writing-list">
-     <a class="writing-item" href="https://www.washingtonpost.com/investigations/interactive/2025/va-disability-ratings-profit-consultants/" target="_blank">
+      <a class="writing-item" href="https://www.washingtonpost.com/investigations/interactive/2025/va-disability-ratings-profit-consultants/" target="_blank">
         <span class="writing-source">WaPo</span>
         <span class="writing-title">The unregulated industry that coaches veterans to pile on benefits <em>2024</em></span>
       </a>
@@ -770,8 +749,9 @@
         <span class="writing-title">Disruption of DNA-methylation-dependent long gene repression in Rett syndrome <em>Research · 2015</em></span>
       </a>
     </div>
-   <div style="margin-top: 2rem;"></div>
-   <p class="section-eyebrow">Teaching</p>
+
+    <div style="margin-top: 2.5rem;"></div>
+    <p class="section-eyebrow">Teaching</p>
     <div class="writing-list">
       <a class="writing-item" href="https://github.com/caitlingilbert/lede2025_R" target="_blank">
         <span class="writing-source">Columbia</span>
@@ -788,7 +768,7 @@
     </div>
   </div>
 
-<!-- ═══ TALKS &amp; MEDIA ═══ -->
+  <!-- ═══ TALKS & MEDIA ═══ -->
   <div class="tab-panel" id="panel-talks" role="tabpanel">
     <div class="talks-list">
       <a class="talks-item" href="https://youtu.be/4jH6LmHI1UE?si=cbg65ACCWZD--n5d&t=1838" target="_blank">
@@ -801,7 +781,7 @@
       </a>
       <a class="talks-item" href="https://www.wgbh.org/news/health/2025-03-07/covid-upended-everyday-life-whats-stuck-around-5-years-after-lockdown" target="_blank">
         <span class="talks-source">Radio</span>
-        <span class="talks-title">WGBH Under The Radar: COVID upended everyday life. What’s stuck around 5 years after lockdown? <em>2025</em></span>
+        <span class="talks-title">WGBH Under The Radar: COVID upended everyday life. What's stuck around 5 years after lockdown? <em>2025</em></span>
       </a>
       <a class="talks-item" href="https://creators.spotify.com/pod/profile/incision-media/episodes/How-Big-Food-Tries-to-Co-Opt-the-Anti-Diet-Movement-e3dt0au" target="_blank">
         <span class="talks-source">Podcast</span>
@@ -821,7 +801,7 @@
       </a>
     </div>
   </div>
- 
+
 </div><!-- /tabs-wrapper -->
 
 <!-- ═══ PROJECT MODAL (outside tabs-wrapper) ═══ -->
